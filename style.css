@@ -1,0 +1,48 @@
+input {
+  position: absolute;
+  opacity: 0;
+}
+.tab {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background: #2c3e50;
+  font-weight: bold;
+  cursor: pointer;
+}
+.label:hover{
+	background-color: black;
+}
+.label::after {
+  content: "\276F";
+  width: 1em;?
+  height: 1em;
+  text-align: right;
+  -webkit-transition: all .35s;
+  transition: all .35s;
+}
+.para {
+  max-height: 0;
+  padding: 0 1em;
+  color: #2c3e50;
+  background: white;
+  -webkit-transition: all .35s;
+  transition: all .35s;
+}
+input:checked + .label {
+  background: blue;
+}
+input:checked + .label::after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+input:checked ~ .para {
+  max-height: 100vh;
+  padding: 1em;
+}
